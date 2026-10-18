@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="910" viewBox="0 0 900 910" font-family="Consolas, 'Courier New', monospace" font-size="15">
+  <rect width="900" height="910" fill="#ffffff"/>
+  <text x="450" y="40" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="22" font-weight="bold" fill="#222">Diagrama UML – Sistema de Inventario (Avance 2)</text>
+
+  <!-- ===== Clase base ===== -->
+  <g transform="translate(200,70)">
+    <rect width="500" height="385" fill="#e8f0fe" stroke="#1a3d7c" stroke-width="2"/>
+    <text x="250" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1a3d7c">ProductoInventario</text>
+    <line x1="0" y1="45" x2="500" y2="45" stroke="#1a3d7c" stroke-width="2"/>
+    <text x="14" y="70">+ nombre : str</text>
+    <text x="14" y="92">+ categoria : str</text>
+    <text x="14" y="114">- __precio : float</text>
+    <text x="14" y="136">- __cantidad : int</text>
+    <line x1="0" y1="150" x2="500" y2="150" stroke="#1a3d7c" stroke-width="2"/>
+    <text x="14" y="175">+ __init__(nombre, precio, cantidad, categoria)</text>
+    <text x="14" y="197">+ «property» precio : float</text>
+    <text x="14" y="219">+ «setter» precio(nuevo_precio)</text>
+    <text x="14" y="241">+ «property» cantidad : int</text>
+    <text x="14" y="263">+ «setter» cantidad(nueva_cantidad)</text>
+    <text x="14" y="285">+ mostrar_informacion() : None</text>
+    <text x="14" y="307">+ agregar_stock(cantidad) : None</text>
+    <text x="14" y="329">+ vender_producto(cantidad) : None</text>
+    <text x="14" y="351">+ actualizar_precio(nuevo_precio) : None</text>
+    <text x="14" y="373">+ calcular_valor_total() : float</text>
+  </g>
+
+  <!-- Flecha de herencia (generalización): de la subclase hacia la superclase -->
+  <line x1="450" y1="565" x2="450" y2="477" stroke="#222" stroke-width="2"/>
+  <polygon points="450,457 436,481 464,481" fill="#ffffff" stroke="#222" stroke-width="2"/>
+  <text x="465" y="525" font-family="Segoe UI, Arial, sans-serif" font-size="14" fill="#555">hereda de</text>
+
+  <!-- ===== Subclase ===== -->
+  <g transform="translate(150,565)">
+    <rect width="600" height="300" fill="#e6f4ea" stroke="#1e6b34" stroke-width="2"/>
+    <text x="300" y="30" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e6b34">ProductoPerecedero</text>
+    <line x1="0" y1="45" x2="600" y2="45" stroke="#1e6b34" stroke-width="2"/>
+    <text x="14" y="70">+ fecha_caducidad : date</text>
+    <text x="14" y="92"># _temperatura_almacenamiento : float</text>
+    <line x1="0" y1="106" x2="600" y2="106" stroke="#1e6b34" stroke-width="2"/>
+    <text x="14" y="131">+ __init__(nombre, precio, cantidad, categoria,</text>
+    <text x="14" y="151">           fecha_caducidad, temperatura_almacenamiento)</text>
+    <text x="14" y="175">+ esta_caducado(fecha_actual) : bool</text>
+    <text x="14" y="197">+ dias_para_caducar(fecha_actual) : int</text>
+    <text x="14" y="219">+ aplicar_descuento(porcentaje) : None</text>
+    <text x="14" y="241">+ mostrar_informacion(fecha_actual) : None   «override»</text>
+    <text x="14" y="263">+ vender_producto(cantidad, fecha_actual) : None «override»</text>
+  </g>
+
+  <text x="450" y="892" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#555">+ público   - privado   # protegido   |   △ generalización (herencia)</text>
+</svg>
